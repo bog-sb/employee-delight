@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head></head>
+<body>
+  <div class="container" th:fragment="content">
+    <h3 style="margin-left: 30px;">Voting page</h3>
+    <p class="lead">Click on a product category to expand it and spend your
+      hard earned points on what your heart desires most.</p>
+
+    <div class="row">
+      <div class="  large-3 columns right">
+        <p style="font-weight: bold;">
+          Remaining points:<span id="remainingPoints" th:text="${points}">3333</span>
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- Voting section  -->
+    <div class="panel">
+      <dl class="accordion" data-accordion="">
+
+        <!-- Row for each product category -->
+        <dd th:each="cat : ${productCategories}">
+          <a th:href="'#'+${cat.name}" th:text="${cat.name}">Accordion 1</a>
+          <div th:id="${cat.name}" class="content large-12 columns">
+            <table class="large-12 columns">
+              <thead>
+                <tr>
+                  <th>Product name</th>
+                  <th>Cost(in points)</th>
+                  <th>Vote</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!--  Row for each product -->
+                <tr th:each="prod : ${productLists[cat.name]}">
+                  <td th:text="${prod.name}">Content Goes Here</td>
+                  <td th:text="${prod.cost}">This is longer content Donec
+                    id elit non mi porta gravida at eget metus.</td>
+                  <td><div th:id="${prod.id}" class="vote row collapse">
+                      <div class="small-8 large-10 columns">
+                        <input class="vote" type="text" placeholder="Points..." />
+                      </div>
+                      <div class="small-4 large-2 columns">
+                        <!-- <a href="#" class="button postfix">Vote</a> -->
+                        <button class="vote button postfix">Vote</button>
+                      </div>
+                    </div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </dd>
+
+
+      </dl>
+
+
+
+      <!--  Welcome message modal -->
+      <!-- <div th:switch="${welcomeBody}"> -->
+      <div th:if="${welcomeBody != null}" id="welcome-modal"
+        class="reveal-modal small" data-reveal="">
+        <h1 th:text="${welcomeTitle}">Welcome</h1>
+        <div th:text="${welcomeBody}">Welcome message</div>
+        <a class="close-reveal-modal">&#215;</a>
+        <script type="text/javascript">
+									$(document).ready(
+											function() {
+
+												$('#welcome-modal').foundation(
+														'reveal', 'open');
+											});
+								</script>
+      </div>
+    </div>
+    <script src="../../resources/js/vote_page.js"
+      th:src="@{/resources/js/vote_page.js}"></script>
+
+
+  </div>
+</body>
+</html>

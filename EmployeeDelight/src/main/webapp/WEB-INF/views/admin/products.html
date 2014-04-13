@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html;"></meta>
+</head>
+<body>
+  <div class="container" th:fragment="content">
+    <div class="manager">
+      <div class="outer_container"
+        style="width: 100%; margin-left: auto; height: 700px; margin-right: auto; border: 1px solid;">
+        <div class="inner_container"
+          style="width: 80%; margin-left: auto; margin-right: auto; overflow: hidden; height: 700px;">
+          <h3>Manage products: <button id="refresh"  class="button small">Refresh</button></h3>
+          <div class="panel_left"
+            style="width: 300px; height: 500px; border: 1px solid; float: left; overflow: hidden;">
+            <div class="panel_left_nav"
+              style="width: 200px; float: left; margin-top: 30px; margin-bottom: 15px; margin-left: 50px; float: left;">
+              <div class="panel_left_nav_list"
+                style="width: 200px; float: left; border: border:1px solid; height: 400px; overflow: scroll;  border: border:1px solid; overflow-x: hidden;">
+                <ul id="productList"></ul>
+              </div>
+
+              <div style="clear: both;"></div>
+              <div class="panel_left_nav_bottom">
+                <button id="add_product" class="button small">Add product</button>
+              </div>
+            </div>
+          </div>
+          <div class="panel_right"
+            style="width: 450px; height: 550px; float: left; padding-left: 30px;">
+            <div class="form"
+              style="width: 250px; text-align: center; margin-left: 100px; margin-right: auto;">
+               
+                  
+                  <p>
+                <span class="item_right_panel"> <input
+                  type="hidden" id="now_id" />
+                </span>
+              </p>
+              <p>
+                <span class="item_right_panel"> <label>Name:</label> <input
+                  type="text" class="isChanged" id="name"/>
+                </span>
+              </p>
+              <p>
+                <span class="item_right_panel"> <label>Cost:</label> <input
+                  type="text" class="isChanged" id="cost"/>
+                </span>
+              </p>
+              <p>
+                <span class="item_right_panel"> <label>Category:</label>
+                  <input type="text" class="isChanged" id="productCategory"/>
+                </span>
+              </p>
+              <p>
+                <span class="item_right_panel"> <label>Available:</label>
+                  <input type="checkbox" class="isChanged" id="available"/>
+                </span>
+              </p>
+              <button id='cancel' class="button small">Cancel</button>
+              <button id='save' class="button small">Save</button>
+            </div>
+            <div id="response"
+              style="right: 0; width: 300px; bottom: 0; position: fixed;">
+              DIV
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <script type="text/javascript"
+      src="../../resources/js/manage/prod_lib.js"
+      th:src="@{/resources/js/manage/prod_lib.js}">
+  </script>
+  </div>
+</body>
+
+</html>
+
+
+
+
+

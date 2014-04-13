@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head></head>
+<body>
+  <div class="container" th:fragment="content">
+
+    <h3>Reports</h3>
+
+    <div class="panel ">
+      <h5>Generate report</h5>
+      <p>Enter the budget for the next shopping session and generate a
+        report based on what the employees voted.</p>
+
+      <form th:action="@{/reports/generate}" action="#" method="post">
+        Budget:<input name="budget" /> <br /> <input class="button tiny"
+          type="submit" value="Generate" />
+      </form>
+    </div>
+
+    <script src="../../resources/js/report_page.js"
+      th:src="@{/resources/js/report_page.js}"></script>
+
+
+  </div>
+</body>
+</html>

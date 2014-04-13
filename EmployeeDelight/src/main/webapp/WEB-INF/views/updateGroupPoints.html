@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head></head>
+<body>
+  <div class="container" th:fragment="content">
+
+    <h3>Update group points</h3>
+
+    <div class="panel ">
+      <h5>Generate report</h5>
+      <p>Enter the budget for the next shopping session and generate a
+        report based on what the employees voted.</p>
+
+      <form th:action="@{/groups/updatePoints}" action="#" method="post">
+        Group:<input name="groupName" /> <br />
+        Points:<input name="points" /> <br /> <input class="button tiny"
+          type="submit" value="Update" />
+      </form>
+    </div>
+
+    <script src="../../resources/js/report_page.js"
+      th:src="@{/resources/js/report_page.js}"></script>
+
+
+  </div>
+</body>
+</html>

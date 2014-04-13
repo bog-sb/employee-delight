@@ -1,0 +1,39 @@
+/* TOP BAR  */
+#header {
+}
+
+#logo-img{
+	 margin-top: 3px; 
+	margin-left:10px;
+	height : 40px;
+}
+
+.top-bar{
+	/* min-height: 70px; */
+	background-color: #4d5965;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+	/* height: 100%;  */
+	background-color: #4d5965;
+	font-size: 20px;
+}
+
+
+/*  FOOTER  */
+div#footer{
+	background-color: #111111;
+	overflow: auto;
+	line-height: 70px;
+	 position:absolute;
+   bottom:0;
+   width:100%;
+}
+
+/*  MANAGE LIST */
+.delete-icon {
+    font-size:20px;
+    line-height: 1;
+    color: #aaaaaa;
+    font-weight: bold;
+    cursor: pointer; }

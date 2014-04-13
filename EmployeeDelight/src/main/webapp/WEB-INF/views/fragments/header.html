@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head></head>
+<body>
+  <div id="header" th:fragment="header">
+
+    <!-- Navigation -->
+  
+    <nav class="top-bar" data-topbar="">
+      <ul class="title-area">
+        <!-- Title Area -->
+        <li class="name">
+          <div class="large">
+            
+            <a href="#"> <img id="logo-img" class="left"
+              src="../../resources/img/header_logo.png"
+              th:src="@{/resources/img/header_logo.png}" />
+            </a>
+          </div>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+      </ul>
+
+      <section class="top-bar-section">
+
+        <ul class="right">
+          <li sec:authorize="hasRole('ROLE_ADMIN')"><a href="#" th:href="@{/}">Vote</a></li>
+          <li sec:authorize="hasRole('ROLE_ADMIN')"><a href="#" th:href="@{/users}">Users</a></li>
+          <li sec:authorize="hasRole('ROLE_ADMIN')"><a href="#" th:href="@{/groups}">Groups</a></li>
+          <li sec:authorize="hasRole('ROLE_ADMIN')"><a href="#" th:href="@{/products}">Products</a></li>
+          <li sec:authorize="hasRole('ROLE_ADMIN')"><a href="#" th:href="@{/reports/}">Reports</a></li>
+          <li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_USER')"><a
+            href="#" th:href="@{/logout}">Logout</a></li>
+        </ul>
+
+
+      </section>
+    </nav>
+
+    <!-- End Top Bar -->
+
+  </div>
+</body>
+</html>

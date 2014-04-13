@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Employee Delight</title>
+
+<!--  CSS  -->
+<link rel="stylesheet" type="text/css" media="all"
+  href="../../resources/css/foundation.css"
+  th:href="@{/resources/css/foundation.css}" />
+<link rel="stylesheet" type="text/css" media="all"
+  href="../../resources/css/main.css" th:href="@{/resources/css/main.css}" />
+
+<!-- JavaScript -->
+<script src="../../resources/js/vendor/modernizr.js"
+  th:src="@{/resources/js/vendor/modernizr.js}"></script>
+<!-- More JavaScript -->
+<script src="../../resources/js/vendor/jquery.js"
+  th:src="@{/resources/js/vendor/jquery.js}"></script>
+<script src="../../resources/js/foundation.min.js"
+  th:src="@{/resources/js/foundation.min.js}"></script>
+</head>
+<body>
+  <!-- HEADER  -->
+  <div th:replace="fragments/header.html :: header">Header</div>
+
+  <!-- MAIN CONTENT  -->
+
+  <div class="row" >
+    <div th:replace="${view} :: content">
+      <h3>This is the content area:</h3>
+      Content
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div th:replace="fragments/footer.html :: footer">Footer</div>
+
+
+  <script>
+			$(document).foundation();
+		</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html;"></meta>
+<title>Test google Maps</title>
+
+
+</head>
+<body onload="">
+	<div class="container" th:fragment="content">
+		<div id="map-canvas" style="height: 600px; width: 1000px"></div>
+		<div>
+			<button id="rrBtn">Refresh to current position</button>
+			<br></br>
+			<div>
+				<input id="searchFld" />
+				<button id="searchBtn">Search Location</button>
+			</div>
+			<button id="saveRouteBtn">Save Route</button>
+			<br></br>
+		</div>
+		<script
+			src="HTTP://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js" th:src="@{HTTP://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js}"></script>
+
+		<script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;sensor=false"
+			th:src="@{https://maps.googleapis.com/maps/api/js?libraries=places&amp;sensor=false}"></script>
+		<script type="text/javascript"
+			src="../../resources/js/addRoute/addRoute.js"
+			th:src="@{/resources/js/addRoute/addRoute.js}"></script>
+	</div>
+</body>
+</html>
+
+
+
